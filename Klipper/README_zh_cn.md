@@ -23,13 +23,16 @@
 
 2. 自行编译最新版本的固件<br/>
    1. 参考 [klipper官方的安装说明](https://www.klipper3d.org/Installation.html) 下载klipper源码到树莓派
-   2. 使用下面的配置去编译固件
+   2. 使用下面的配置去编译固件         
       * [*] Enable extra low-level configuration options
-      * Micro-controller Architecture = `Raspberry Pi RP2040`
+      * Micro-controller Architecture (`Raspberry Pi RP2040/RP235x`)  --->
+      * Processor model (`rp2040`)  --->
+      * Bootloader offset (`No bootloader`)  --->
+      * Flash chip (`GENERIC_03H with CLKDIV 4`)  --->
       * 如果使用 USB 与树莓派通信
-         * Communication interface = `USB`
-      * 如果使用 USART2 与树莓派通信
-         * Communication interface = `Serial (on UART0 GPIO1/GPIO0)`
+         * Communication Interface (`USBSERIAL`)  --->
+      * 如果使用 UART0 与树莓派通信
+         * Communication Interface (`UART0 on GPIO0/GPIO1`)  --->
 
       <img src=Images/klipper_menuconfig.png width="800" /><br/>
    3. 配置选择完成后, 输入 `q` 退出配置界面，当询问是否保存配置是选择 "Yes" .

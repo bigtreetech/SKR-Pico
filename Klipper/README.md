@@ -26,11 +26,14 @@
    1. Refer to [klipper's official installation](https://www.klipper3d.org/Installation.html) to download klipper source code to raspberry pi
    2. `Building the micro-controller` with the configuration shown below.
       * [*] Enable extra low-level configuration options
-      * Micro-controller Architecture = `Raspberry Pi RP2040`
+      * Micro-controller Architecture (`Raspberry Pi RP2040/RP235x`)  --->
+      * Processor model (`rp2040`)  --->
+      * Bootloader offset (`No bootloader`)  --->
+      * Flash chip (`GENERIC_03H with CLKDIV 4`)  --->
       * IF USE USB
-         * Communication interface = `USB`
+         * Communication Interface (`USBSERIAL`)  --->
       * ElSE IF USE UART0
-         * Communication interface = `Serial (on UART0 GPIO1/GPIO0)`
+         * Communication Interface (`UART0 on GPIO0/GPIO1`)  --->
 
       <img src=Images/klipper_menuconfig.png width="800" /><br/>
    3. Once the configuration is selected, press `q` to exit,  and "Yes" when  asked to save the configuration.
